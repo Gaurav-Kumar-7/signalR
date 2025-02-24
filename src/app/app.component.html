@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand mx-3" href="#">SignalR Demo</a>
+
+    <div class="ms-auto">
+      <select id="themeSelect" [(ngModel)]="selectedTheme" (change)="changeTheme(selectedTheme)" class="form-select">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="system">System Default</option>
+      </select>   
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h2 class="mb-3">Real-Time Messaging</h2>
+
+  <div *ngIf="receivedMessage" class="alert alert-info">
+    <strong>Message Received:</strong> {{ receivedMessage }}
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text">Message</span>
+    <input
+      type="text"
+      [(ngModel)]="userInputMessage"
+      class="form-control"
+      placeholder="Enter your message..."
+      aria-label="Message"
+    />
+  </div>
+
+  <button (click)="sendMessage()" class="btn btn-primary" [disabled]="!userInputMessage.trim()">
+    Send Message
+  </button>
+</div>

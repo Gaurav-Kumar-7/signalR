@@ -1,0 +1,12 @@
+body {
+    -webkit-transition: background 0.3s ease-out, opacity 0.3s ease 0.3s;
+    -moz-transition: background 0.3s ease-out, opacity 0.3s ease 0.3s;
+    -o-transition: background 0.3s ease-out, opacity 0.3s ease 0.3s;
+    transition: background 0.3s ease-out, opacity 0.3s ease 0.3s;
+  }
+  
+  body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+  
